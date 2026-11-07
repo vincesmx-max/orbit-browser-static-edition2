@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d1b">
+  <title>Orbit Browser</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Orbit home">
+      <span class="brand-mark">◉</span><span>ORBIT</span>
+    </a>
+    <div class="top-actions">
+      <span class="status"><i></i> Static edition</span>
+      <button class="icon-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">☼</button>
+      <button class="profile-btn" id="profileBtn">Local profile</button>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow">YOUR SPACE ON THE WEB</div>
+      <h1>Explore beyond<br><span>the ordinary.</span></h1>
+      <p class="sub">A clean place to launch your favorite sites.</p>
+      <form class="search" id="searchForm">
+        <span class="search-icon">⌕</span>
+        <input id="address" autocomplete="off" spellcheck="false"
+          placeholder="Search the web or enter a website address">
+        <button type="submit">Go <span>↗</span></button>
+      </form>
+      <p class="hint">Enter a website like <b>example.com</b> or search with a phrase.</p>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div><div class="eyebrow">QUICK ACCESS</div><h2>Your launchpad</h2></div>
+        <button class="subtle-btn" id="addBookmark">＋ Add shortcut</button>
+      </div>
+      <div class="tiles" id="tiles">
+        <a class="tile" href="https://www.google.com" target="_blank" rel="noopener"><span class="tile-icon blue">G</span><b>Google</b><small>Search</small></a>
+        <a class="tile" href="https://www.youtube.com" target="_blank" rel="noopener"><span class="tile-icon red">▶</span><b>YouTube</b><small>Videos</small></a>
+        <a class="tile" href="https://www.wikipedia.org" target="_blank" rel="noopener"><span class="tile-icon gray">W</span><b>Wikipedia</b><small>Explore</small></a>
+        <a class="tile" href="https://www.twitch.tv" target="_blank" rel="noopener"><span class="tile-icon purple">◈</span><b>Twitch</b><small>Streaming</small></a>
+      </div>
+    </section>
+
+    <section class="section lower">
+      <div class="section-head"><div><div class="eyebrow">BOOKMARKS</div><h2>Saved places</h2></div></div>
+      <div class="bookmark-list" id="bookmarks"><p class="empty">Your saved shortcuts will appear here.</p></div>
+    </section>
+    <footer>ORBIT BROWSER <span>•</span> Static edition hosted on GitHub Pages</footer>
+  </main>
+
+  <dialog id="profileDialog">
+    <form method="dialog" class="dialog-card" id="profileForm">
+      <button class="close" aria-label="Close">×</button>
+      <div class="eyebrow">THIS DEVICE ONLY</div>
+      <h2>Local profile</h2>
+      <p>Your display name is stored in this browser only. It is not an account and does not sync.</p>
+      <label for="displayName">Display name</label>
+      <input id="displayName" maxlength="24" placeholder="Enter a name">
+      <button class="primary" id="saveProfile" value="save">Save profile</button>
+      <button class="text-btn" value="cancel">Cancel</button>
+    </form>
+  </dialog>
+
+  <dialog id="bookmarkDialog">
+    <form method="dialog" class="dialog-card" id="bookmarkForm">
+      <button class="close" aria-label="Close">×</button>
+      <div class="eyebrow">QUICK ACCESS</div><h2>Add a shortcut</h2>
+      <label for="siteName">Name</label><input id="siteName" required maxlength="28" placeholder="My site">
+      <label for="siteUrl">Website URL</label><input id="siteUrl" required placeholder="https://example.com">
+      <button class="primary" value="save">Add shortcut</button>
+      <button class="text-btn" value="cancel">Cancel</button>
+    </form>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
